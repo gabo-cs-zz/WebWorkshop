@@ -6,50 +6,48 @@
   <meta name="author" content="Gabriel Coronado">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Document</title>
+  <title>Actualización de datos</title>
   <style>
-  .datos {
-    border: 1px solid rgba(0, 0, 0, .1);
-    padding: 20px;
-    margin: 1em auto;
-  }
+    .datos {
+      border: 1px solid rgba(0, 0, 0, .1);
+      padding: 20px;
+      margin: 1em auto;
+    }
   </style>
 </head>
 <body>
-  <?php
-    //echo 'HEEY'
-  ?>
+  <?php require_once 'process.php'; ?>
   <div class="container mt-2">
     <h2 class="text-center" title="Author: Gabriel Coronado">Actualización de datos</h2>
     <p class="text-center">Bienvenido, por favor diligencia toda la información que se presentan a continuación.</p>
-    <form action="" method="POST">
+    <form action="process.php" method="POST">
       <h6 class="mt-2">Datos personales</h6>
       <div class="datos">
         <div class="form-row mt-4">
           <div class="form-group col-md-4">
             <label for="inputCedula">Cédula:</label>
-            <input type="number" class="form-control" id="inputCedula">
+            <input type="number" name="cedula" class="form-control" id="inputCedula" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputNombre">Nombre completo:</label>
-            <input type="text" class="form-control" id="inputNombre">
+            <input type="text" name="nombre" class="form-control" id="inputNombre" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputDireccion">Dirección de residencia:</label>
-            <input type="text" class="form-control" id="inputDireccion">
+            <input type="text" name="direccion" class="form-control" id="inputDireccion">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputCorreo">Correo electrónico:</label>
-            <input type="email" class="form-control" id="inputCorreo">
+            <input type="email" name="correo" class="form-control" id="inputCorreo" required>
           </div>
           <div class="form-group col-md-6">
             <label for="inputCel">Número celular:</label>
-            <input type="number" class="form-control" id="inputCel">
+            <input type="number" name="cel" class="form-control" id="inputCel">
           </div>
         </div>
-        <button type="submit" class="btn btn-dark">Enviar formulario</button>
+        <button type="submit" name="save" class="btn btn-dark">Enviar formulario</button>
       </div>
     </form>
     <div>
