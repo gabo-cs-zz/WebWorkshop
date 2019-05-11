@@ -17,6 +17,20 @@
 </head>
 <body>
   <?php require_once 'process.php'; ?>
+
+  <?php
+    $mysqli = new mysqli('localhost', 'root', '', 'dbempleados') or die(mysqli_error($mysqli));
+    $result = $mysqli->query(
+      "SELECT cedula_empleado, nombre_empleado, direccion_empleado, email_empleado, celular_empleado FROM empleados"
+    ) or die($mysqli->error);
+
+    function pre_r( $array ) {
+      echo '<pre>';
+      print_r($array);
+      echo '</pre>';
+    }
+  ?>
+
   <div class="container mt-2">
     <h2 class="text-center" title="Author: Gabriel Coronado">Actualización de datos</h2>
     <p class="text-center">Bienvenido, por favor diligencia toda la información que se presentan a continuación.</p>
@@ -25,11 +39,11 @@
       <div class="datos">
         <div class="form-row mt-4">
           <div class="form-group col-md-4">
-            <label for="inputCedula">Cédula:</label>
+            <label for="inputCedula">Cédula: *</label>
             <input type="number" name="cedula" class="form-control" id="inputCedula" required>
           </div>
           <div class="form-group col-md-4">
-            <label for="inputNombre">Nombre completo:</label>
+            <label for="inputNombre">Nombre completo: *</label>
             <input type="text" name="nombre" class="form-control" id="inputNombre" required>
           </div>
           <div class="form-group col-md-4">
@@ -39,7 +53,7 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputCorreo">Correo electrónico:</label>
+            <label for="inputCorreo">Correo electrónico: *</label>
             <input type="email" name="correo" class="form-control" id="inputCorreo" required>
           </div>
           <div class="form-group col-md-6">
@@ -64,13 +78,13 @@
           </tr>
         </thead>
         <tbody>
+        <?php while ($row = $result->fetch_assoc()): ?>
           <tr>
-            <th>1121651</th>
-            <td>Mark</td>
-            <td>Calle 1000</td>
-            <td>mark@ootto.com</td>
-            <td>3051234789</td>
+            <td><?php echo $row['cedula_empleado']; ?></td>
+            <td><?php echo $row['nombre_empleado']; ?></td>
+            <td></td>
           </tr>
+        <?php endwhile; ?>
         </tbody>
       </table>
     </div>

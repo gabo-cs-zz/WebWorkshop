@@ -11,7 +11,7 @@ if (isset($_POST['save'])){
 
   $mysqli->query(
     "INSERT INTO empleados
-    (cedula_empleado, nombre_empelado, direccion_empleado, email_empleado, celular_empleado)
+    (cedula_empleado, nombre_empleado, direccion_empleado, email_empleado, celular_empleado)
     VALUES('$cedula', '$nombre', '$direccion', '$email', '$cel')"
   ) or die($mysqli->error) ;
 }
