@@ -75,6 +75,7 @@
             <th scope="col">Dirección</th>
             <th scope="col">Email</th>
             <th scope="col">Celular</th>
+            <th scope="col" colspan="2">Acción</th>
           </tr>
         </thead>
         <tbody>
@@ -82,6 +83,9 @@
           <tr>
             <td><?php echo $row['cedula_empleado']; ?></td>
             <td><?php echo $row['nombre_empleado']; ?></td>
+            <td><?php echo $row['direccion_empleado']; ?></td>
+            <td><?php echo $row['email_empleado']; ?></td>
+            <td><?php echo $row['celular_empleado']; ?></td>
             <td></td>
           </tr>
         <?php endwhile; ?>
