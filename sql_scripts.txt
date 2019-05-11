@@ -1,0 +1,17 @@
+CREATE DATABASE dbempleados;
+
+SHOW DATABASES;
+
+USE dbempleados;
+
+CREATE TABLE empleados (
+	id INT NOT NULL AUTO_INCREMENT,
+	cedula_empleado INT NOT NULL,
+	nombre_empelado VARCHAR(100) NOT NULL,
+	direccion_empleado VARCHAR(100) NOT NULL,
+	email_empleado VARCHAR(100) NOT NULL,
+	celular_empleado INT NOT NULL,
+	CONSTRAINT PRIMARY KEY ( id )
+);
+
+SHOW TABLES;
